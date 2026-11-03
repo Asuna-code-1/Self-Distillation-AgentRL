@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+RESKILL_REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+RESKILL_ASSET_ROOT=/data/fd/donghaosen/Self-Distillation-AgentRL
+export PROJECT_ROOT="${PROJECT_ROOT:-${RESKILL_REPO_ROOT}}"
+export CONDA_BASE="${CONDA_BASE:-$(dirname -- "${RESKILL_REPO_ROOT}")/miniconda3}"
+export CONDA_ENV="${CONDA_ENV:-agentrl-reskill}"
+export CONDA_ENVS_PATH="${RESKILL_REPO_ROOT}/local_assets/conda/envs"
+export CONDA_PKGS_DIRS="${RESKILL_ASSET_ROOT}/cache/conda-training"
+export CONDA_REGISTER_ENVS=false
+export PIP_CACHE_DIR="${RESKILL_ASSET_ROOT}/cache/pip"
+export XDG_CACHE_HOME="${RESKILL_ASSET_ROOT}/cache"
+export HF_HOME="${RESKILL_ASSET_ROOT}/cache/huggingface"
+export TORCH_HOME="${RESKILL_ASSET_ROOT}/cache/torch"
+export TRITON_CACHE_DIR="${RESKILL_ASSET_ROOT}/cache/triton"
+export TMPDIR="${RESKILL_ASSET_ROOT}/tmp"
+export WANDB_DIR="${RESKILL_ASSET_ROOT}/wandb"
+export WANDB_CACHE_DIR="${RESKILL_ASSET_ROOT}/cache/wandb"
+export WANDB_CONFIG_DIR="${RESKILL_ASSET_ROOT}/cache/wandb-config"
+export WANDB_MODE="${WANDB_MODE:-online}"
+export MODEL_PATH="${MODEL_PATH:-${RESKILL_REPO_ROOT}/models/Qwen3.5-${MODEL_SIZE:-2B}}"
+export DATA_ROOT="${DATA_ROOT:-${RESKILL_ASSET_ROOT}/data}"
+export ALFWORLD_DATA="${RESKILL_ASSET_ROOT}/data/alfworld"
+export RAY_TMPDIR="$(dirname -- "${RESKILL_REPO_ROOT}")/sdar-ray"
+export LD_LIBRARY_PATH="/usr/local/cuda/compat/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64"
+export CUDA_HOME="${RESKILL_REPO_ROOT}/local_assets/cuda128"
+export PYTHONNOUSERSITE=1
+export PYTHONPATH="${RESKILL_REPO_ROOT}"
+export OMP_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+
+export PATH="${CUDA_HOME}/bin:${PATH}"
+export CUDA_CACHE_PATH="${RESKILL_ASSET_ROOT}/cache/cuda"
+export TORCH_EXTENSIONS_DIR="${RESKILL_ASSET_ROOT}/cache/torch-extensions"
+export TORCHINDUCTOR_CACHE_DIR="${RESKILL_ASSET_ROOT}/cache/torch-inductor"
+export TILELANG_CACHE_DIR="${RESKILL_ASSET_ROOT}/cache/tilelang"
+export FLASHINFER_WORKSPACE_BASE="${RESKILL_ASSET_ROOT}/cache/flashinfer"
+
+export VLLM_ENABLE_V1_MULTIPROCESSING=0
